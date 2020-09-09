@@ -1,0 +1,307 @@
+Q1. Explore the following commands with various options, refer man pages for 
+    further help a) date b) cal c) bc d) echo e) who f) whoami g) logname g) uname h)
+    seq i) clear
+
+Ans:  a) date +%a
+	 date +%A
+	 date +%b
+	 date +%B
+	 date +%d
+	 date +%D
+	 date +%Y
+	 date +%T
+	 date +%B' '%D' '%Y
+
+	b)cal
+		cal 20 2020
+   
+		cal jan 2020
+   
+		cal -m1 05
+
+	c)bc
+		echo "10^2" | bc
+   
+		echo "10+2" | bc
+
+	d)echo
+		echo "Hello Good MOrning"
+		 echo -e "hii" "Good" "MOrning"
+		echo -e "Hii \Hello \How are u"
+   		echo -e "Hii \cGood Morning"
+   		echo -e "Hii \nGood \nMorning"
+   		echo -e "Hii \tGood \tMorning"
+   		echo -e "Hii \rGood Morning"	
+   		echo -e "Hii \vGood \vMorning"
+		
+
+	e)Who
+		who -m -H
+   		who
+		who -T -H
+		who -b -H
+		who -p -H
+
+	f)whomi
+		whoami
+                whoami --version
+		
+	g) logname 
+		logname 
+   		logname --version
+
+	h) uname 
+-		uname
+   		uname  -a
+   		uname  -s
+   		uname  -n
+
+	i)  seq 
+		seq 2 2 10
+    		seq 10
+    		seq 2 10
+    		seq -f "Hello%02g" 2 4
+
+	j) clear
+		clear
+
+---------------------------------------------------------------------------------------------------
+Q2.	A) Create three directory a b and c and create a.txt,b.txt and c.txt
+		in each directory respectively and then copy c directory into the a.
+-->
+	amol@DESKTOP-JP52UI7:~$ mkdir a
+	amol@DESKTOP-JP52UI7:~$ mkdir b
+	amol@DESKTOP-JP52UI7:~$ mkdir c
+	
+	amol@DESKTOP-JP52UI7:~$ ls
+	a  b  c
+	
+	amol@DESKTOP-JP52UI7:~$ cd a
+
+	amol@DESKTOP-JP52UI7:~/a$ cat > a.txt
+	hello
+	amol@DESKTOP-JP52UI7:~/a$ cd ..
+	amol@DESKTOP-JP52UI7:~$ cd b
+	amol@DESKTOP-JP52UI7:~/b$ cat > b.txt
+	amol
+	amol@DESKTOP-JP52UI7:~/b$ cd ..
+	amol@DESKTOP-JP52UI7:~$ cd c
+	@DESKTOP-JP52UI7:~/c$ cat > c.txt
+	shide
+
+
+	B)Move Directory b to c.
+-->	amol@DESKTOP-JP52UI7:~$ mv b c
+
+
+	C)Create alias of ls -lh command to your name.
+-->	amol@DESKTOP-JP52UI7:~$  alias list='ls -lh'
+
+	D)Change Directory name a to cdac.
+-->	amol@DESKTOP-JP52UI7:~$ mv a cdac
+
+----------------------------------------------------------------------------------
+
+Q3. A) Create five files file1.txt , file2.txt ,file3.txt file4.txt and
+    file5.txt with some text inside it. Search for 's' character
+    inside all the files using grep command.
+    Also Use cat to view all file content together.
+--> 
+	amol@DESKTOP-JP52UI7:~$ touch file1.txt file2.txt file3.txt file4.txt file5.txt
+
+	amol@DESKTOP-JP52UI7:~$ cat > file1.txt
+	Amol
+
+	amol@DESKTOP-JP52UI7:~$ cat > file2.txt
+	shinde
+
+	amol@DESKTOP-JP52UI7:~$ cat > file3.txt
+	nanded
+
+	amol@DESKTOP-JP52UI7:~$  cat > file4.txt
+	cdac
+
+	amol@DESKTOP-JP52UI7:~$ cat > file5.txt
+	maharashtra
+
+	amol@DESKTOP-JP52UI7:~$ grep 's' file1.txt file2.txt file3.txt file4.txt file5.txt
+
+
+	B)Create file.txt using cat and edit that using nano editor.
+-->	amol@DESKTOP-JP52UI7:~$ cat > file.txt
+	amol@DESKTOP-JP52UI7:~$ nano file.txt
+	amol shinde                                                   
+
+	c)Create 5 empty files using touch command
+-->	amol@DESKTOP-JP52UI7:~$ touch 1.txt 2.txt 3.txt 4.txt 5.txt
+
+	D)Remove previously created directory a , b and c.
+-->	amol@DESKTOP-JP52UI7:~$ rmdir a b c
+
+---------------------------------------------------------------------------------------------------
+
+Q4. Create a file with some content using vi editor
+-->amol@DESKTOP-JP52UI7:~$ vi a.txt
+
+	
+a) Display the file using cat command
+-->amol@DESKTOP-JP52UI7:~$ cat a.txt
+   Amol shinde
+
+b) Display line numbers along with content
+-->amol@DESKTOP-JP52UI7:~$ nl a.txt
+	
+c) Display the file in reverse order using tac
+-->amol@DESKTOP-JP52UI7:~$ tac file1.txt
+
+d) Combine multiple files using cat command
+-->amol@DESKTOP-JP52UI7:~$ cat file1.txt file2.txt file3.txt
+----------------------------------------------------------------------------------------------------
+
+Q5. Create Random some files and sub directories.
+-->amol@DESKTOP-JP52UI7:~$ touch 1.txt 2.txt 3.txt 4.txt 5.txt
+
+	a) display files row wise, column wise, 1 per row
+	--> amol@DESKTOP-JP52UI7:~$ cat > file.txt
+	    amol shinde nanded maha BJP English
+            amol@DESKTOP-JP52UI7:~$ fmt -1 file.txt
+            amol
+            shinde
+            nanded
+            maha
+            BJP
+            English
+
+	b) sort the files in ascending, descending order
+	-->  sort abc.txt
+
+	c) Create some hidden files and sub directories and display them using “ls -a”
+	-->amol@DESKTOP-JP52UI7:~$ cat > .amol.txt
+	   amol@DESKTOP-JP52UI7:~$ ls -a
+	   .amol.txt
+
+
+	d) Change time stamp of some files and directories using touch command and display the files using ls -t ls -rt
+	-->amol@DESKTOP-JP52UI7:~$ touch -d '20 June 2019 11:02' file.txt
+
+	   amol@DESKTOP-JP52UI7:~$ ls -lt
+
+	e) Recursive display contents of your home directory.
+	--> amol@DESKTOP-JP52UI7:~$ ls -R home
+
+	f) display all attributes of files and directories using ls -l
+	-->amol@DESKTOP-JP52UI7:~$ ls -l file.txt
+	  -rw-rw-rw- 1 amol amol 21 Jun 20  2019 file.txt
+
+	g) display attributes of a directory using ls -ld
+	-->amol@DESKTOP-JP52UI7:~$ ls -ld file.txt
+	   -rw-rw-rw- 1 amol amol 21 Jun 20  2019 file.txt
+
+========================================================================================================
+Q1. Create directory of your name and then create 4 files inside it named
+    a.txt, b.txt, c.txt and d.sh. And change the directory permission to
+    only user and also files permission to only user such that
+--> amol@DESKTOP-JP52UI7:~$ mkdir Amol
+
+    amol@DESKTOP-JP52UI7:~$ cd Amol
+    amol@DESKTOP-JP52UI7:~/Amol$ touch a.txt b.txt c.txt d.txt
+
+
+    a)user can read and write the file a.txt and b.txt
+--> amol@DESKTOP-JP52UI7:~$ chmod 600 a.txt b.txt
+
+    b)user can write the file c.txt
+--> amol@DESKTOP-JP52UI7:~$ chmod 200 c.txt 
+
+    c)user can exectuable the file d.sh. MakeContents of file d.sh:#/bin/shls -lh
+-->	vi d.sh
+   	chmod 100 d.sh
+
+-----------------------------------------------------------------------------------------------
+Note:Many operation might not work.Analyze them
+1.	Create Three level nested directory a,b and c
+-->
+   	amol@DESKTOP-JP52UI7:~$ mkdir a
+	amol@DESKTOP-JP52UI7:~$ cd a
+	amol@DESKTOP-JP52UI7:~/a$ mkdir b
+	amol@DESKTOP-JP52UI7:~/a$ cd b
+	amol@DESKTOP-JP52UI7:~/a/b$ mkdir c
+	amol@DESKTOP-JP52UI7:~/a/b$ cd c
+	amol@DESKTOP-JP52UI7:~/a/b/c$
+a)Create at least one hidden file in each directory
+--> amol@DESKTOP-JP52UI7:~$ touch .a.txt
+
+b)Create at least one normal text file in each directory
+--> amol@DESKTOP-JP52UI7:~$ touch a.txt
+
+c)Copy c into a
+--> amol@DESKTOP-JP52UI7:~$ cp c.txt a.txt
+
+d)Copy file inside a into b
+--> amol@DESKTOP-JP52UI7:~$  mv a.txt b.txt
+
+2.	Change the third level directory c permission to read only
+-->	amol@DESKTOP-JP52UI7:~$ chmod 444 c
+
+3.	Try copying third level c directory to outside of a
+-->	
+4.	Create the directory  “data“ inside b
+--> 	amol@DESKTOP-JP52UI7:~/a/b$ mkdir data
+
+5.	Change the permission of b to read and write only
+-->	amol@DESKTOP-JP52UI7:~/a$ chmod 666 b
+
+6.	Create directory “data2”  inside b
+-->	amol@DESKTOP-JP52UI7:~/a/b$ touch data2
+
+7.	Create data.txt file inside b
+-->	amol@DESKTOP-JP52UI7:~/a/b$ touch data2.txt
+
+8.	Rename the second level directory c to copied_dir
+-->	amol@DESKTOP-JP52UI7:~/a/b$ mv c copied_dir
+
+9.	Change permission of copied_dir to only executable
+-->	amol@DESKTOP-JP52UI7:~/a/b$ chmod 111 copied_dir
+
+10.	Try ls on copied_dir
+-->	cd copied_dir
+		ls
+		ls: cannot open directory '.': Permission denied
+
+11.	Try moving copied_dir to outside of a
+	
+
+12.	Try moving data directory outside of a
+
+
+13.	Now change the owner of the directory a to root
+
+14.	Change permission of a to read write and executable to only user
+-->	amol@DESKTOP-JP52UI7:~/a$ chmod 777 a
+
+15.	Try creating directory sample inside a
+--> 	amol@DESKTOP-JP52UI7:~/a$ mkdir sample
+
+16.	Create directory x outside a
+-->	amol@DESKTOP-JP52UI7:~$ makdir x
+
+17.	Try moving x inside a
+
+18.	Create directory movies
+
+19.	Change group of movies to sudo
+
+20.	Change group of movies to avahi
+
+21.	Try changing permission after changing ownership to root
+
+22.	Try Changing permission after changing group to sudo without sudo
+
+23.	Try Changing owner and group both to root
+
+24.	Try changinging permission
+
+25.	Try deleting the file
+
+
+
